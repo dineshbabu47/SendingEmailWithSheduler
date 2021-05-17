@@ -34,19 +34,19 @@ public class EmailService {
 		   
 		   Session session = Session.getInstance(props, new javax.mail.Authenticator() {
 		      protected PasswordAuthentication getPasswordAuthentication() {
-		         return new PasswordAuthentication("mdineshbabumagi47@gmail.com", "d9655799067");
+		         return new PasswordAuthentication("your mailid", "<your password>");
 		      }
 		   });
 		   Message msg = new MimeMessage(session);
 		   msg.setFrom(new InternetAddress("tutorialspoint@gmail.com", false));
 
 		   msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse("mdineshbabumagi47@gmail.com"));
-		   msg.setSubject("Tutorials point email");
-		   msg.setContent("Tutorials point email", "text/html");
+		   msg.setSubject("TVM Report");
+		   msg.setContent("Report of the item", "text/html");
 		   msg.setSentDate(new Date());
 
 		   MimeBodyPart messageBodyPart = new MimeBodyPart();
-		   messageBodyPart.setContent("Tutorials point email", "text/html");
+		   messageBodyPart.setContent("Report of book email", "text/html");
 
 		   Multipart multipart = new MimeMultipart();
 		   multipart.addBodyPart(messageBodyPart);
