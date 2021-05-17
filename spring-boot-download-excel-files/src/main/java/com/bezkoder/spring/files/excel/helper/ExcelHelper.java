@@ -2,6 +2,7 @@ package com.bezkoder.spring.files.excel.helper;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -57,6 +58,7 @@ public class ExcelHelper {
       
 
       workbook.write(out);
+     
       return new ByteArrayInputStream(out.toByteArray());
     } catch (IOException e) {
       throw new RuntimeException("fail to import data to Excel file: " + e.getMessage());

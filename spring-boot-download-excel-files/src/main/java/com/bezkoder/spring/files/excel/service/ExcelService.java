@@ -22,14 +22,14 @@ public class ExcelService {
     List<Tutorial> tutorials = repository.findAll();
     
     ObjectMapper objectMapper = new ObjectMapper();
-    //Set pretty printing of json
+    //Set printing of json
     objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
     
     List<Tutorial> jsonexcel = null;
 	try {
 		String arrayToJson = objectMapper.writeValueAsString(tutorials);
 		//2. Convert JSON to List of Person objects
-		//Define Custom Type reference for List<Person> type
+		//Define Custom Type reference for List<Tutorial> type
 		TypeReference<List<Tutorial>> mapType = new TypeReference<List<Tutorial>>() {
 		};
 		jsonexcel = objectMapper.readValue(arrayToJson, mapType);
